@@ -1,0 +1,38 @@
+.homePage {
+  background-color: papayawhip;
+}
+
+.publicConsultations {
+  height: 100%;
+  border: 1px dotted yellow;
+}
+
+.consultation {
+  border: 2px dashed palevioletred;
+  min-height: 200px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.consultationTitle {
+  border: 1px solid black;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.consultationPeriod {
+  border: 1px solid yellow;
+  margin-bottom: 10px;
+  font-size: var(--font-size-small);
+  color: var(--gray);
+}
+
+.consultationIntroduction {
+  border: 1px solid red;
+  margin-bottom: 10px;
+}
+
+.consultationContributions {
+
+}

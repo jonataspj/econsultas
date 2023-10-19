@@ -1,11 +1,19 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './components/AppRoutes';
+import './styles/globals.css';
+import AppContext from './components/AppContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Test
-      </header>
+      <BrowserRouter>
+        <AppContext>
+
+          <AppRoutes />
+
+        </AppContext>
+      </BrowserRouter>
     </div>
   );
 }

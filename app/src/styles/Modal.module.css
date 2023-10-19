@@ -1,0 +1,15 @@
+.modal {
+  border: 1px solid red;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: red;
+}
+
+.closeButton {
+  font-size: 20px;
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  right: 0;
+}
