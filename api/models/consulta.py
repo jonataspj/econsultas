@@ -34,6 +34,7 @@ class Pauta(Base):
 class Comentario(Base):
     __tablename__ = "comentario"
     id: Mapped[int] = mapped_column(primary_key=True)
+    commentario: Mapped[str]
     pauta_id: Mapped[int] = mapped_column(ForeignKey("pauta.id"))
     pauta: Mapped[PautaComentario] = relationship(back_populates="comentarios")
     usuario_id: Mapped[int] = mapped_column(ForeignKey("usuario.id"))
@@ -49,8 +50,8 @@ class PautaComentario(Pauta):
 
 
 class PautaVotacao(Pauta):
-    votosSim: Mapped[int] = mapped_column(nullable=True)
-    votosNao: Mapped[int]
+    votos_sim: Mapped[int] = mapped_column(nullable=True)
+    votos_nao: Mapped[int]
 
     __mapper_args__ = {
         "polymorphic_identity": "pautavotacao",

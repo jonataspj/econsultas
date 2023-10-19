@@ -1,7 +1,5 @@
 import datetime
 
-from sqlalchemy import DateTime
-
 from models.base import Base
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
