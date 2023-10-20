@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+from starlette.middleware.cors import CORSMiddleware
 
 import config
 import dados_exemplo
@@ -9,6 +10,21 @@ from routes.routes import router
 from models.base import Base
 
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:1776",
+    "http://127.0.0.1:1776"
+    "http://127.0.0.1"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
