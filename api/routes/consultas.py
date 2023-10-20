@@ -51,6 +51,7 @@ async def consulta_response_from_model(consulta: Consulta) -> ConsultaResponse:
         orgao=consulta.orgao,
         data_inicial=consulta.data_inicial,
         data_termino=consulta.data_termino,
+        status=consulta.status,
         pautas=[await pauta_response_from_model(pauta) for pauta in consulta.pautas]
     )
 

@@ -4,6 +4,8 @@ from datetime import datetime
 from typing import Optional, List
 
 from pydantic import BaseModel
+
+from models.consulta import Status
 from schemas.usuario_schema import UsuarioResponse
 
 
@@ -27,6 +29,7 @@ class ConsultaBase(BaseModel):
     orgao: str
     data_inicial: datetime
     data_termino: datetime
+    status: Status
 
 
 class PautaBase(BaseModel):
