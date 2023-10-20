@@ -1,3 +1,14 @@
+# Hackathon InovaUni e-gov
+## Equipe Cybertins
+## Sistematizar e simplificar a participação cidadã em consultas públicas
+
+## Integrantes
+- Alfredo Aguiar
+- Matheus Naves
+- Luiz Eduardo
+- Lucas Castro
+- Jônatas Pereira
+
 ## Requisitos
 
 - Python 3.11
