@@ -6,6 +6,7 @@ const consultationsExample = {
       "introduction": "This is the introduction for Public Consultation 1.",
       "agency": "Ministry of Health",
       "description": "Description of Public Consultation 1. Here you can include detailed information about the consultation topic.",
+      "status": "aberta",
       "pautas": [
         {
           "id": 1,
@@ -61,7 +62,7 @@ const consultationsExample = {
           "votesNao": 8,
           "comentarios": [
             { "nome": "User 3", "texto": "This is a lengthy comment for Pauta 2, providing a thorough perspective on the issue at hand." },
-            { "nome": "User 4", "texto": "Another extensive comment for Pauta 2, offering a comprehensive viewpoint on the matter." }
+            { "nome": "User 4", "texto": "Another extensive comment for Pauta 2, offering comprehensive insights and recommendations." }
           ]
         }
       ]
@@ -72,6 +73,7 @@ const consultationsExample = {
       "introduction": "Introduction for Public Consultation 2.",
       "agency": "Ministry of Education",
       "description": "Description of Public Consultation 2. Include important details about the consultation.",
+      "status": "aberta",
       "pautas": [
         {
           "id": 3,
@@ -95,6 +97,7 @@ const consultationsExample = {
       "introduction": "Introduction for Public Consultation 3.",
       "agency": "Ministry of Environment",
       "description": "Description of Public Consultation 3. Provide more context about the consultation.",
+      "status": "aberta",
       "pautas": [
         {
           "id": 4,
@@ -115,6 +118,7 @@ const consultationsExample = {
       "introduction": "Introduction for Public Consultation 3.",
       "agency": "Ministry of Environment",
       "description": "Description of Public Consultation 3. Provide more context about the consultation.",
+      "status": "aberta",
       "pautas": [
         {
           "id": 4,
@@ -135,6 +139,7 @@ const consultationsExample = {
       "introduction": "Introduction for Public Consultation 3.",
       "agency": "Ministry of Environment",
       "description": "Description of Public Consultation 3. Provide more context about the consultation.",
+      "status": "aberta",
       "pautas": [
         {
           "id": 4,
@@ -155,6 +160,7 @@ const consultationsExample = {
       "introduction": "Introduction for Public Consultation 3.",
       "agency": "Ministry of Environment",
       "description": "Description of Public Consultation 3. Provide more context about the consultation.",
+      "status": "aberta",
       "pautas": [
         {
           "id": 4,
@@ -175,6 +181,7 @@ const consultationsExample = {
       "introduction": "Introduction for Public Consultation 3.",
       "agency": "Ministry of Environment",
       "description": "Description of Public Consultation 3. Provide more context about the consultation.",
+      "status": "encerrada",
       "pautas": [
         {
           "id": 4,

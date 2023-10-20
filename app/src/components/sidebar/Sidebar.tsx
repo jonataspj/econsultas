@@ -39,9 +39,9 @@ export default function Sidebar() {
         <h4 className={styles.hotPautasH}>Pautas em Alta</h4>
 
         <div className={styles.pautas}>
-          {hotPautas?.map((pauta) => {
+          {hotPautas?.map((pauta, i) => {
             return (
-              <div className={styles.pauta}>
+              <div key={"pauta" + i} className={styles.pauta}>
                 <p>
                   {pauta.text}
                 </p>

@@ -1,13 +1,13 @@
 import PublicConsultations from '../components/public-consultations/PublicConsultations'
 import styles from '../styles/HomePage.module.css'
 
-export default function HomePage() {
+export default function ClosedConsultations() {
   return (
     <div className={styles.homePage}>
 
-      <h2 className={styles.consultasAbertas}>Consultas Abertas</h2>
+      <h2 className={styles.consultasAbertas}>Consultas Fechadas</h2>
 
-      <PublicConsultations status='aberta' />
+      <PublicConsultations status={'encerrada'} />
 
     </div>
   )

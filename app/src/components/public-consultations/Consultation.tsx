@@ -13,6 +13,7 @@ export interface ConsultationInterface {
   agency: string;
   description: string;
   pautas: PautaInterface[];
+  status: string
 }
 
 export interface PautaInterface {
