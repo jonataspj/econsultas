@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import styles from '../../styles/Navbar.module.css'
+import api from '../../services/api'
+import axios from 'axios'
+import { url } from 'inspector'
+import qs from 'qs'
 
 interface LoginInsideModalProps {
   updateModalIsOpen: (isOpen:boolean) => void
@@ -11,8 +15,23 @@ export default function LoginInsideModal({ updateModalIsOpen } : LoginInsideModa
 
   const login = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('login')
-    updateModalIsOpen(false)
+
+    const params = new URLSearchParams();
+    params.append('username', usuario);
+    params.append('password', senha);
+    api.post('/token', params)
+    .then((response) => {
+      const { data } = response;
+
+      localStorage.setItem("ecomerce-token", data.access_token)
+
+      console.log(localStorage.getItem('ecomerce-token'))
+      updateModalIsOpen(false)
+    })
+    .catch((error) => {
+      window.alert("Erro ao fazer login!")
+    });
+
   }
 
   
