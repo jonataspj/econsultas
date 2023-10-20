@@ -2,8 +2,8 @@ import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.usuario import Usuario
-from app.routes.auth import get_password_hash
+from models.usuario import Usuario
+from routes.auth import get_password_hash
 
 
 async def popular_banco(session: AsyncSession):

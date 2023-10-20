@@ -8,11 +8,11 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app import config
-from app.db import get_db_session
-from app.models.usuario import Usuario
-from app.schemas.auth_schema import AuthenticationForm
-from app.schemas.usuario_schema import TokenData, Token
+import config
+from db import get_db_session
+from models.usuario import Usuario
+from schemas.auth_schema import AuthenticationForm
+from schemas.usuario_schema import TokenData, Token
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")

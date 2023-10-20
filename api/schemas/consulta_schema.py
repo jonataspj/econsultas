@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Optional, List
 
 from pydantic import BaseModel
-from app.schemas.usuario_schema import UsuarioResponse
+from schemas.usuario_schema import UsuarioResponse
 
 
 class ComentarioBase(BaseModel):

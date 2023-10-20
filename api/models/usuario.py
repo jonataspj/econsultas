@@ -5,7 +5,7 @@ from uuid import uuid4
 from sqlalchemy import select
 from sqlalchemy.exc import NoResultFound, MultipleResultsFound
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.models.base import Base
+from models.base import Base
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 

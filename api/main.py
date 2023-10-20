@@ -1,12 +1,12 @@
+import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-import app.config as config
-import app.dados_exemplo as dados_exemplo
-from app.routes.auth import router as auth_router
-from app.routes.routes import router
-from app.models.base import Base
+import config
+import dados_exemplo
+from routes.auth import router as auth_router
+from routes.routes import router
+from models.base import Base
 
 app = FastAPI()
 
@@ -23,5 +23,9 @@ async def init_tables():
         await dados_exemplo.popular_banco(session)
 
 
-app.include_router(router, prefix="/api")
+app.include_router(router)
 app.include_router(auth_router)
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=8000, reload=True)

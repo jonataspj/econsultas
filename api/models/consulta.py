@@ -7,12 +7,12 @@ from uuid import uuid4
 from sqlalchemy import select, ForeignKey
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.base import Base
+from models.base import Base
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 
-from app.models.usuario import Usuario
+from models.usuario import Usuario
 
 
 class Status(enum.Enum):
