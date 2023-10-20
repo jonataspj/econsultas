@@ -17,7 +17,7 @@ export default function Navbar() {
 
       <NavbarItem icon='fa-solid fa-house' text='Consultas Abertas' path='/' />
       <NavbarItem icon='fa-solid fa-house' text='Consultas Encerradas' path='/closedconsultations' />
-      <NavbarItem icon='fa-solid fa-house' text='Gerenciar Consultas' path='/manageconsultations' />
+      {/* <NavbarItem icon='fa-solid fa-house' text='Gerenciar Consultas' path='/manageconsultations' /> */}
 
       <Login />
     </div>

@@ -7,7 +7,7 @@ export default function HomePage() {
 
       <h2 className={styles.consultasAbertas}>Consultas Abertas</h2>
 
-      <PublicConsultations status='aberta' />
+      <PublicConsultations status='Em Aberto' />
 
     </div>
   )

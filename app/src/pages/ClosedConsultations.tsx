@@ -7,7 +7,7 @@ export default function ClosedConsultations() {
 
       <h2 className={styles.consultasAbertas}>Consultas Fechadas</h2>
 
-      <PublicConsultations status={'encerrada'} />
+      <PublicConsultations status={'Encerrada'} />
 
     </div>
   )

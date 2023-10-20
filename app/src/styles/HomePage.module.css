@@ -202,8 +202,22 @@
   color: #555;
 }
 
+.giveAComment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .giveAComment input {
   padding: 8px;
   border-radius: 4px;
   border: none;
+}
+
+.giveAComment button {
+  padding: 10px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -43,24 +43,27 @@ export interface ConsultationInterface {
 }
 
 interface ConsultationProps {
-  obj: ConsultationInterface
+  obj: ConsultationInterface,
+  getForms: () => void
 }
 
 const ConsultationContext = React.createContext<{
   consultation: ConsultationInterface | null,
   modalIsOpen: boolean
-  updateModalIsOpen: ((isOpen: boolean) => void)
+  updateModalIsOpen: ((isOpen: boolean) => void),
+  getForms: () => void
     }>({
       consultation: null,
       modalIsOpen: false,
-      updateModalIsOpen: (isOpen: boolean) => {}
+      updateModalIsOpen: (isOpen: boolean) => {},
+      getForms: () => {}
     });
 
 export function useConsultationContext() {
   return useContext(ConsultationContext);
 }
 
-export default function Consultation({ obj } : ConsultationProps) {
+export default function Consultation({ obj, getForms } : ConsultationProps) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const updateModalIsOpen = (isOpen: boolean) => {
@@ -76,7 +79,8 @@ export default function Consultation({ obj } : ConsultationProps) {
     <ConsultationContext.Provider value={{
       consultation: obj,
       modalIsOpen,
-      updateModalIsOpen
+      updateModalIsOpen,
+      getForms: getForms
     }}>
       <div className={styles.consultation}>
         <h3 className={styles.consultationTitle}>
@@ -84,11 +88,11 @@ export default function Consultation({ obj } : ConsultationProps) {
         </h3>
 
         <div className={styles.consultationPeriod}>
-        11/11/1111 - 11/11/1111
+          {obj.data_inicial} - {obj.data_termino}
         </div>
 
         <div className={styles.consultationIntroduction}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga iusto inventore amet quidem recusandae quam beatae hic nam, dolorem ex. Quam nisi debitis earum pariatur est vel, vitae porro illum.
+          {obj.descricao}
         </div>
 
         <div className={styles.consultationContributions}>
