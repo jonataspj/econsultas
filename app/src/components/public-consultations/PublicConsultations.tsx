@@ -6,7 +6,7 @@ import api from '../../services/api';
 import getToken from '../../functions/getToken';
 
 interface PublicConsultationsProps {
-  status: 'aberta' | 'encerrada'
+  status: 'Em Aberto' | 'Encerrada'
 }
 
 export default function PublicConsultations({ status } : PublicConsultationsProps) {
@@ -30,10 +30,10 @@ export default function PublicConsultations({ status } : PublicConsultationsProp
   }
 
   useEffect(() => {
-    setTimeout(() => {
+    // setTimeout(() => {
       getForms()
       setMounted(true)
-    }, 1000)
+    // }, 1000)
   },[])
 
   // if (!mounted ||!publicConsultations) return null
@@ -50,6 +50,7 @@ export default function PublicConsultations({ status } : PublicConsultationsProp
               <Consultation 
                 key={consultation.id}
                 obj={consultation}
+                getForms={getForms}
               />
             )
 
