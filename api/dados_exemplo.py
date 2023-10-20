@@ -2,7 +2,7 @@ import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.consulta import Consulta, Status, Pauta
+from models.consulta import Consulta, Status, Pauta, Comentario
 from models.usuario import Usuario
 from routes.auth import get_password_hash
 
@@ -59,15 +59,15 @@ async def popular_banco(session: AsyncSession):
             Pauta(
                 id="c1pauta1",
                 texto="Deveria haver restrições mais rigorosas ao desenvolvimento em áreas protegidas?",
-                votos_sim=0,
-                votos_nao=0,
+                votos_sim=130,
+                votos_nao=237,
                 comentarios=[]
             ),
             Pauta(
                 id="c1pauta2",
                 texto="Devemos adotar medidas adicionais para proteger espécies ameaçadas de extinção em nossa região?",
-                votos_sim=0,
-                votos_nao=0,
+                votos_sim=510,
+                votos_nao=340,
                 comentarios=[]
             ),
             Pauta(
@@ -80,15 +80,15 @@ async def popular_banco(session: AsyncSession):
             Pauta(
                 id="c1pauta4",
                 texto="Deveríamos investir mais em fontes de energia renovável?",
-                votos_sim=0,
-                votos_nao=0,
+                votos_sim=200,
+                votos_nao=100,
                 comentarios=[]
             ),
             Pauta(
                 id="c1pauta5",
                 texto="Deveria haver restrições adicionais sobre o uso de produtos químicos nocivos em atividades industriais?",
-                votos_sim=0,
-                votos_nao=0,
+                votos_sim=300,
+                votos_nao=500,
                 comentarios=[]
             ),
         ]
@@ -106,8 +106,8 @@ async def popular_banco(session: AsyncSession):
             Pauta(
                 id="c2pauta1",
                 texto="Deveriam ser implementadas medidas de conservação das nascentes em nossas bacias hidrográficas?",
-                votos_sim=0,
-                votos_nao=0,
+                votos_sim=250,
+                votos_nao=98,
                 comentarios=[]
             ),
             Pauta(
@@ -115,20 +115,39 @@ async def popular_banco(session: AsyncSession):
                 texto="Quais ações podem ser tomadas para reduzir a poluição da água em nossos rios e lagos?",
                 votos_sim=None,
                 votos_nao=None,
-                comentarios=[]
+                comentarios=[
+                    Comentario(
+                        id="c221",
+                        comentario="Deve ser feita fiscalização nas areas de despejo de esgoto",
+                        usuario=usuario1
+                    )
+                ]
             ),
             Pauta(
                 id="c2pauta3",
                 texto="Como podemos promover o uso responsável da água em atividades agrícolas e industriais?",
                 votos_sim=None,
                 votos_nao=None,
-                comentarios=[]
+                comentarios=[
+                    Comentario(
+                        id="c231",
+                        comentario="Tem que ser oferecido treinamento e educação aos agricultores e industriais sobre "
+                                   "práticas sustentáveis de gestão de água",
+                        usuario=usuario2
+                    ),
+                    Comentario(
+                        id="c232",
+                        comentario="é nescessario implementar tecnologias de irrigação mais eficientes, "
+                                   "como gotejamento e aspersão, na agricultura",
+                        usuario=usuario1
+                    )
+                ]
             ),
             Pauta(
                 id="c2pauta4",
                 texto="Deveríamos investir em tecnologias para monitorar a qualidade da água em tempo real?",
-                votos_sim=0,
-                votos_nao=0,
+                votos_sim=30,
+                votos_nao=20,
                 comentarios=[]
             ),
             Pauta(
