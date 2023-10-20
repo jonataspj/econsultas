@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import styles from '../../styles/Navbar.module.css'
 import api from '../../services/api'
+import getToken from '../../functions/getToken'
 
 
 interface LoginInsideModalProps {
-  updateModalIsOpen: (isOpen:boolean) => void
+  updateModalIsOpen: (isOpen:boolean) => void,
+  updateUser: (user: any) => void
 }
 
-export default function LoginInsideModal({ updateModalIsOpen } : LoginInsideModalProps) {
+export default function LoginInsideModal({ updateModalIsOpen, updateUser } : LoginInsideModalProps) {
   const [usuario, setUsuario] = useState("")
   const [senha, setSenha] = useState("")
 
@@ -25,6 +27,13 @@ export default function LoginInsideModal({ updateModalIsOpen } : LoginInsideModa
 
       console.log(localStorage.getItem('econsultas-token'))
       updateModalIsOpen(false)
+
+      api.get('/usuarios/minha_conta', { headers: { Authorization: `Bearer ${getToken()}` }})
+      .then((response) => {
+        const { data } = response;
+
+        updateUser(data)
+      })
     })
     .catch((error) => {
       window.alert("Erro ao fazer login!")
