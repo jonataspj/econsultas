@@ -61,13 +61,21 @@ async def popular_banco(session: AsyncSession):
                 texto="Deveria haver restrições mais rigorosas ao desenvolvimento em áreas protegidas?",
                 votos_sim=130,
                 votos_nao=237,
-                comentarios=[]
+                comentarios=[
+                    Comentario(
+                        id="c111",
+                        comentario="Áreas protegidas muitas vezes abrigam ecossistemas únicos e uma biodiversidade "
+                                   "significativa. Restringir o desenvolvimento nessas áreas ajuda a proteger "
+                                   "espécies em perigo de extinção e habitats naturais",
+                        usuario=usuario1
+                    )
+                ]
             ),
             Pauta(
                 id="c1pauta2",
                 texto="Devemos adotar medidas adicionais para proteger espécies ameaçadas de extinção em nossa região?",
-                votos_sim=510,
-                votos_nao=340,
+                votos_sim=1,
+                votos_nao=10,
                 comentarios=[]
             ),
             Pauta(
