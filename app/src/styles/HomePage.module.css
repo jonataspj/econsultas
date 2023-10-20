@@ -1,38 +1,209 @@
 .homePage {
-  background-color: papayawhip;
+  /* background-color: papayawhip; */
+}
+
+.consultasAbertas {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 20px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 20px;
 }
 
 .publicConsultations {
   height: 100%;
-  border: 1px dotted yellow;
+  /* border: 1px dotted yellow; */
 }
 
 .consultation {
-  border: 2px dashed palevioletred;
+  /* border: 2px dashed palevioletred; */
   min-height: 200px;
-  padding: 20px 0;
+  padding: 8px 8px 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid gainsboro;
+
+  border-radius: 10px;
+  background: #eeeeee;
+  box-shadow: 5px 5px 10px #e0e0e0,
+              -5px -5px 10px #fff;
 }
 
 .consultationTitle {
-  border: 1px solid black;
-  font-size: 30px;
+  /* border: 1px solid black; */
+  font-size: 26px;
   margin-bottom: 10px;
 }
 
 .consultationPeriod {
-  border: 1px solid yellow;
   margin-bottom: 10px;
   font-size: var(--font-size-small);
   color: var(--gray);
 }
 
 .consultationIntroduction {
-  border: 1px solid red;
   margin-bottom: 10px;
 }
 
 .consultationContributions {
+  color: var(--gray);
+  font-size: var(--font-size-small);
+  font-weight: bold;
+  margin-bottom: 4px;
+}
 
+.consultationPautas {
+  color: var(--gray);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.consultationPautas:hover {
+  color: var(--black);
+}
+
+/* consultatio modal */
+.consultationModal header {
+  margin-bottom: 16px;
+}
+
+.consultationTitleModal {
+  margin-bottom: 16px;
+}
+
+.consultationInfoModal {
+  font-size: var(--font-size-small);
+  color: var(--gray);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.consultationInfoModal p {
+  display: flex;
+  gap: 8px;
+}
+
+
+/* description */
+.consultationDescription {
+  padding: 10px;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.consultationDescriptionContent {
+  margin-top: 16px;
+  width: 100%;
+  white-space: break-spaces;
+}
+
+
+/* pautas */
+.pautasH {
+  margin-bottom: 4px;
+}
+
+.pauta {
+  font-size: var(--font-size-medium);
+  border: 1px solid var(--gray);
+  border-left-width: 4px ;
+  padding: 20px;
+  margin-bottom: 4px;
+}
+
+.pauta header {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.pautaTexto {
+  font-size: var(--font-size-heading-small);
+  flex: 1;
+}
+
+.votos {
+  display: flex;
+  gap: 4px;
+}
+
+.votos button {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  min-width: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentBar {
+  height: 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  display: flex;
+}
+
+.percentBar .yes {
+  background-color: var(--green);
+}
+
+.percentBar .no {
+  background-color: var(--red);
+}
+
+
+
+.votos button i {
+  font-size: 20px;
+}
+
+.votos button span {
+  font-size: var(--font-size-small) !important;
+}
+
+/* comments */
+.seeComments {
+  font-size: var(--font-size-small);
+  color: #555;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.comments {
+  max-height: 200px;
+  overflow: auto;
+  margin-bottom: 8px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding-top: 4px;
+  font-size: var(--font-size-small);
+  border-top: 1px solid var(--light-gray);
+}
+
+.comment .name {
+  font-weight: 600;
+  font-size: var(--font-size-small);
+}
+
+.comment .text {
+  color: #555;
+}
+
+.giveAComment input {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
 }

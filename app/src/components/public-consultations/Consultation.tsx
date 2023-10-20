@@ -1,19 +1,49 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import styles from '../../styles/HomePage.module.css'
 import { createPortal } from 'react-dom'
 import Modal from '../modal/Modal'
+import ConsultationModal from './ConsultationModal'
+import React from 'react'
+import { getQtContribuitions } from '../../functions/getQtContribuitions'
 
-interface ConsultationInterface {
-  id: number,
-  title: string,
-  introduction: string,
-  agency: string,
-  description: string,
-  agendas: string[]
+export interface ConsultationInterface {
+  id: number;
+  title: string;
+  introduction: string;
+  agency: string;
+  description: string;
+  pautas: PautaInterface[];
+}
+
+export interface PautaInterface {
+  id: number;
+  text: string;
+  votesSim: number;
+  votesNao: number;
+  comentarios: ComentarioInterface[];
+}
+
+export interface ComentarioInterface {
+  nome: string;
+  texto: string;
 }
 
 interface ConsultationProps {
   obj: ConsultationInterface
+}
+
+const ConsultationContext = React.createContext<{
+  consultation: ConsultationInterface | null,
+  modalIsOpen: boolean
+  updateModalIsOpen: ((isOpen: boolean) => void)
+    }>({
+      consultation: null,
+      modalIsOpen: false,
+      updateModalIsOpen: (isOpen: boolean) => {}
+    });
+
+export function useConsultationContext() {
+  return useContext(ConsultationContext);
 }
 
 export default function Consultation({ obj } : ConsultationProps) {
@@ -23,12 +53,19 @@ export default function Consultation({ obj } : ConsultationProps) {
     setModalIsOpen(isOpen)
   }
 
+  const qtContribuitions = getQtContribuitions(obj)
+  const qtPautas = obj.pautas.length
+
   return (
-    <>
+    <ConsultationContext.Provider value={{
+      consultation: obj,
+      modalIsOpen,
+      updateModalIsOpen
+    }}>
       <div className={styles.consultation}>
-        <div className={styles.consultationTitle}>
+        <h3 className={styles.consultationTitle}>
           {obj.title}
-        </div>
+        </h3>
 
         <div className={styles.consultationPeriod}>
         11/11/1111 - 11/11/1111
@@ -39,24 +76,25 @@ export default function Consultation({ obj } : ConsultationProps) {
         </div>
 
         <div className={styles.consultationContributions}>
-          100 Contribuições
+          {qtContribuitions} Contribuições
         </div>
 
-        <div
+        <button
           className={styles.consultationPautas}
           onClick={() => updateModalIsOpen(true)}
         >
-          Ver todas as 10 pautas
-        </div>
+          {
+            qtPautas == 1
+              ? "Ver Pauta"
+              : `Ver todas as ${qtPautas} pautas`
+          }
+        </button>
       </div>
 
-      <Modal
-        isOpen={modalIsOpen}
-        updateModalIsOpen={updateModalIsOpen}
-      >
-        kkkkkkkkkkkkk
-      </Modal>
+      {modalIsOpen && createPortal(
+        <ConsultationModal />,
+        document.querySelector('.App') as Element)}
 
-    </>
+    </ConsultationContext.Provider>
   )
 }

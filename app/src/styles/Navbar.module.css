@@ -1,3 +1,40 @@
 .navbar {
-  background-color: azure;
+  padding-top: 10px;
+}
+
+.logoGoverno {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.navbarItem {
+  padding: 20px;
+  color: var(--black);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  width: 95%;
+}
+
+.navbarItem:hover {
+  background-color: var(--light-gray);
+}
+
+.navbarItem.isCurrent {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.navbarItem * {
+  text-decoration: none;
+}
+
+.navbarItem i {
+  font-size: 24px;
+}
+
+.navbarItem span a {
+  text-decoration: none;
 }

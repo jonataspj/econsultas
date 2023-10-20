@@ -1,7 +1,7 @@
 .layout {
-  --navBarWrapperSize: 250px;
+  --navBarWrapperSize: 300px;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   height: 100%;
   padding-left: var(--navBarWrapperSize);
@@ -10,7 +10,7 @@
 }
 
 .navbarWrapper {
-  border: 1px solid blue;
+  border: 1px solid var(--blue);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -19,8 +19,6 @@
 }
 
 .mainWrapper {
-  border: 3px solid greenyellow;
-  /* flex: 1; */
   flex-basis: 600px;
   justify-content: center;
 }

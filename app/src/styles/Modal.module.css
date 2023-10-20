@@ -1,15 +1,56 @@
 .modal {
-  border: 1px solid red;
   position: fixed;
   inset: 0;
   z-index: 10;
-  background-color: red;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,0.8);
+
+  animation: open 0.3s 1;
+  transition: all 0.3s;
+  overflow: auto;
+}
+
+.modal.closed {
+  opacity: 0;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.modalContentWrapper {
+  position: relative;
+  width: min(90%, 800px);
+  min-height: 200px;
+  max-height: 90%;
+}
+
+.modalContent {
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: var(--white);
+  max-height: 100%;
 }
 
 .closeButton {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--white);
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: -16px;
+  right: -40px;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }

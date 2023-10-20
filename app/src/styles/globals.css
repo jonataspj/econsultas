@@ -17,5 +17,19 @@
 
   --white: #f0f0f5;
   --black: #353535;
-  --gray: #333;
+  --gray: #555;
+  --light-gray: gainsboro;
+  --blue: #2e3092;
+  --yellow: #ffc707;
+  --green: 	#77dd77;
+  --red: #ff6961;
+}
+
+html.modalIsOpen {
+  overflow: hidden;
+  margin-right: 17px;
+}
+
+body {
+  background-color: var(--white);
 }

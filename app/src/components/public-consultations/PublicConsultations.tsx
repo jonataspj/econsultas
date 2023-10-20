@@ -5,6 +5,7 @@ import Consultation from './Consultation';
 
 export default function PublicConsultations() {
   const [publicConsultations, setPublicConsultations] = useState(consultationsExample.publicConsultations);
+  
   return (
     <div className={styles.publicConsultations}>
       {
@@ -12,7 +13,7 @@ export default function PublicConsultations() {
           return (
             <Consultation 
               key={consultation.id}
-             obj={consultation}
+              obj={consultation}
             />
           )
         })

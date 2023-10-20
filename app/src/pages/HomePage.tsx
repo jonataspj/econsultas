@@ -5,6 +5,8 @@ export default function HomePage() {
   return (
     <div className={styles.homePage}>
 
+      <h2 className={styles.consultasAbertas}>Consultas Abertas</h2>
+
       <PublicConsultations />
 
     </div>
