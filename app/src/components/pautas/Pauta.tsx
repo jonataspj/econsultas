@@ -8,28 +8,28 @@ interface PautaProps {
 
 export default function Pauta({ obj } : PautaProps) {
 
-  const total = obj.votesSim + obj.votesNao;
+  const total = obj.votos_sim + obj.votos_nao;
 
-  const porcentagem1 = (obj.votesSim / total) * 100;
-  const porcentagem2 = (obj.votesNao / total) * 100;
+  const porcentagem1 = (obj.votos_sim / total) * 100;
+  const porcentagem2 = (obj.votos_nao / total) * 100;
 
   return (
     <div className={styles.pauta}>
       <div className={styles.percentBar}>
-        <span className={styles.yes} style={{flex:obj.votesSim}}></span>
-        <span className={styles.no} style={{flex:obj.votesNao}}></span>
+        <span className={styles.yes} style={{flex:obj.votos_sim}}></span>
+        <span className={styles.no} style={{flex:obj.votos_nao}}></span>
       </div>
       <header>
-        <h5 className={styles.pautaTexto}>{obj.text}</h5>
+        <h5 className={styles.pautaTexto}>{obj.texto}</h5>
         <div className={styles.votos}>
           <button className={styles.votoSimButton}>
             <i className="fa-solid fa-thumbs-up"></i>
-            <span>{obj.votesSim}</span>
+            <span>{obj.votos_sim}</span>
           </button>
 
           <button className={styles.votoNaoButton}>
             <i className="fa-solid fa-thumbs-down"></i>
-            <span>{obj.votesNao}</span>
+            <span>{obj.votos_nao}</span>
           </button>
         </div>
       </header>

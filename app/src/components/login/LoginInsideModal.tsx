@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import styles from '../../styles/Navbar.module.css'
 import api from '../../services/api'
-import axios from 'axios'
-import { url } from 'inspector'
-import qs from 'qs'
+
 
 interface LoginInsideModalProps {
   updateModalIsOpen: (isOpen:boolean) => void
@@ -23,9 +21,9 @@ export default function LoginInsideModal({ updateModalIsOpen } : LoginInsideModa
     .then((response) => {
       const { data } = response;
 
-      localStorage.setItem("ecomerce-token", data.access_token)
+      localStorage.setItem("econsultas-token", data.access_token)
 
-      console.log(localStorage.getItem('ecomerce-token'))
+      console.log(localStorage.getItem('econsultas-token'))
       updateModalIsOpen(false)
     })
     .catch((error) => {

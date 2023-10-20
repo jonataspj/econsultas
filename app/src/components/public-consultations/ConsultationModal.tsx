@@ -17,8 +17,8 @@ export default function ConsultationModal() {
   const totalVotes = consultation?.pautas.reduce(
     (accumulator, pauta) => {
       return {
-        votosSim: accumulator.votosSim + pauta.votesSim,
-        votosNao: accumulator.votosNao + pauta.votesNao
+        votosSim: accumulator.votosSim + pauta.votos_sim,
+        votosNao: accumulator.votosNao + pauta.votos_nao
       };
     },
     { votosSim: 0, votosNao: 0 }
@@ -37,7 +37,7 @@ export default function ConsultationModal() {
         <div className={styles.consultationModal}>
           <header>
             <h2 className={styles.consultationTitleModal}>
-              {consultation?.title}
+              {consultation?.titulo}
             </h2>
 
             <div className={styles.consultationInfoModal}>
@@ -48,12 +48,12 @@ export default function ConsultationModal() {
 
               <p>
                 <strong>Período:</strong>
-                <span>11/11/1111 - 11/11/1111</span>
+                <span>{consultation?.data_inicial} - {consultation?.data_termino}</span>
               </p>
 
               <p>
                 <strong>Orgão:</strong>
-                <span>{consultation?.agency}</span>
+                <span>{consultation?.orgao}</span>
               </p>
 
               <p>
@@ -68,7 +68,7 @@ export default function ConsultationModal() {
           <details className={styles.consultationDescription}>
             <summary>Descrição</summary>
             <pre className={styles.consultationDescriptionContent}>
-              {consultation?.description}
+              {consultation?.descricao}
             </pre>
           </details>
 

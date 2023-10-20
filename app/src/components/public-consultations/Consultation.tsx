@@ -6,28 +6,65 @@ import ConsultationModal from './ConsultationModal'
 import React from 'react'
 import { getQtContribuitions } from '../../functions/getQtContribuitions'
 
-export interface ConsultationInterface {
-  id: number;
-  title: string;
-  introduction: string;
-  agency: string;
-  description: string;
-  pautas: PautaInterface[];
-  status: string
-}
-
-export interface PautaInterface {
-  id: number;
-  text: string;
-  votesSim: number;
-  votesNao: number;
-  comentarios: ComentarioInterface[];
-}
-
 export interface ComentarioInterface {
-  nome: string;
-  texto: string;
+  comentario: string;
+  id: string;
+  usuario: {
+    nickname: string;
+    nome: string;
+    sobrenome: string;
+    cpf: string;
+    genero: string;
+    cep: string;
+    cidade: string;
+    uf: string;
+    data_nascimento: string; // ou Date se preferir
+    id: string;
+  };
 }
+export interface PautaInterface {
+  texto: string;
+  id: string;
+  comentarios: ComentarioInterface[];
+  votos_sim: number;
+  votos_nao: number;
+}
+
+export interface ConsultationInterface {
+  titulo: string;
+  descricao: string;
+  detalhes: string;
+  orgao: string;
+  status: string;
+  data_inicial: string; // ou Date se preferir
+  data_termino: string; // ou Date se preferir
+  id: string;
+  pautas: PautaInterface[];
+}
+
+
+// export interface ConsultationInterface {
+//   id: number;
+//   title: string;
+//   introduction: string;
+//   agency: string;
+//   description: string;
+//   pautas: PautaInterface[];
+//   status: string
+// }
+
+// export interface PautaInterface {
+//   id: number;
+//   text: string;
+//   votesSim: number;
+//   votesNao: number;
+//   comentarios: ComentarioInterface[];
+// }
+
+// export interface ComentarioInterface {
+//   nome: string;
+//   texto: string;
+// }
 
 interface ConsultationProps {
   obj: ConsultationInterface
@@ -65,7 +102,7 @@ export default function Consultation({ obj } : ConsultationProps) {
     }}>
       <div className={styles.consultation}>
         <h3 className={styles.consultationTitle}>
-          {obj.title}
+          {obj.titulo}
         </h3>
 
         <div className={styles.consultationPeriod}>

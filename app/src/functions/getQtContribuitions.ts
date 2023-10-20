@@ -8,8 +8,8 @@ export function getQtContribuitions(consultation : ConsultationInterface ) {
   const totalVotes = consultation?.pautas.reduce(
     (accumulator, pauta) => {
       return {
-        votosSim: accumulator.votosSim + pauta.votesSim,
-        votosNao: accumulator.votosNao + pauta.votesNao
+        votosSim: accumulator.votosSim + pauta.votos_sim,
+        votosNao: accumulator.votosNao + pauta.votos_nao
       };
     },
     { votosSim: 0, votosNao: 0 }

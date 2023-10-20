@@ -28,11 +28,11 @@ export default function Comments({ pauta } : CommentsProps) {
         return (
           <div key={`commentario${i}`} className={styles.comment}>
             <span className={styles.name}>
-              {comentario.nome}
+              {comentario.usuario.nome}
             </span>
 
             <span className={styles.text}>
-              {comentario.texto}
+              {comentario.comentario}
             </span>
           </div>
         )
