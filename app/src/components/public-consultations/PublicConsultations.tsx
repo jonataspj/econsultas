@@ -10,8 +10,10 @@ interface PublicConsultationsProps {
 }
 
 export default function PublicConsultations({ status } : PublicConsultationsProps) {
-  const [publicConsultations, setPublicConsultations] = useState<ConsultationInterface[]>();
+  const [publicConsultations, setPublicConsultations] = useState<ConsultationInterface[]>([]);
   const [mounted, setMounted] = useState(false)
+
+  console.log(publicConsultations)
 
   async function getForms() {
     await api.get('/consultas/')
@@ -25,14 +27,19 @@ export default function PublicConsultations({ status } : PublicConsultationsProp
       // window.alert("Erro ao buscar consultas na API.")
       console.log('Erro ao buscar consultas na API.')
     })
-
   }
-  useEffect(() => {
-    getForms()
-    setMounted(true)
-  }, [])
 
-  if (!mounted ||!publicConsultations) return null
+  useEffect(() => {
+    setTimeout(() => {
+      getForms()
+      setMounted(true)
+    }, 1000)
+  },[])
+
+  // if (!mounted ||!publicConsultations) return null
+
+  console.log("oi" + publicConsultations.length)
+
 
   return (
     <div className={styles.publicConsultations}>

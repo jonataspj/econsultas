@@ -42,30 +42,6 @@ export interface ConsultationInterface {
   pautas: PautaInterface[];
 }
 
-
-// export interface ConsultationInterface {
-//   id: number;
-//   title: string;
-//   introduction: string;
-//   agency: string;
-//   description: string;
-//   pautas: PautaInterface[];
-//   status: string
-// }
-
-// export interface PautaInterface {
-//   id: number;
-//   text: string;
-//   votesSim: number;
-//   votesNao: number;
-//   comentarios: ComentarioInterface[];
-// }
-
-// export interface ComentarioInterface {
-//   nome: string;
-//   texto: string;
-// }
-
 interface ConsultationProps {
   obj: ConsultationInterface
 }
@@ -93,6 +69,8 @@ export default function Consultation({ obj } : ConsultationProps) {
 
   const qtContribuitions = getQtContribuitions(obj)
   const qtPautas = obj.pautas.length
+
+  console.log('a')
 
   return (
     <ConsultationContext.Provider value={{
