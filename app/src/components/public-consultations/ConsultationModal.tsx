@@ -42,6 +42,11 @@ export default function ConsultationModal() {
 
             <div className={styles.consultationInfoModal}>
               <p>
+                <strong>ID:</strong>
+                <span>{consultation?.id}</span>
+              </p>
+
+              <p>
                 <strong>Período:</strong>
                 <span>11/11/1111 - 11/11/1111</span>
               </p>
