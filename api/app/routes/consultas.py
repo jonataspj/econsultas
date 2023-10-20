@@ -1,16 +1,16 @@
-from typing import Type, Annotated
+from typing import Type
 from uuid import uuid4
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db import get_db_session
-from models.consulta import Consulta, Status, Pauta, Comentario
-from models.usuario import Usuario
-from routes.auth import get_current_user
-from schemas.consulta_schema import ConsultaResponse, ConsultaCreate, PautaResponse, ComentarioResponse, \
+from app.db import get_db_session
+from app.models.consulta import Consulta, Status, Pauta, Comentario
+from app.models.usuario import Usuario
+from app.routes.auth import get_current_user
+from app.schemas.consulta_schema import ConsultaResponse, ConsultaCreate, PautaResponse, ComentarioResponse, \
     ComentarioCreate
-from schemas.usuario_schema import UsuarioResponse
+from app.schemas.usuario_schema import UsuarioResponse
 
 router = APIRouter(
     prefix="/consultas"

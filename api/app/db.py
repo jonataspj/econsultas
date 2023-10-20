@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine,
 )
 
-import config
+import app.config as config
 
 
 async def get_db_session() -> AsyncGenerator[AsyncSession, None]:

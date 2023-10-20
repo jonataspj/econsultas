@@ -2,18 +2,17 @@ from __future__ import annotations
 
 import enum
 from datetime import datetime
-from typing import Optional
 from uuid import uuid4
 
 from sqlalchemy import select, ForeignKey
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.base import Base
+from app.models.base import Base
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 
-from models.usuario import Usuario
+from app.models.usuario import Usuario
 
 
 class Status(enum.Enum):

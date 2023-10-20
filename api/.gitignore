@@ -1,2 +1,2 @@
 .idea/
-db.sqlite
+app/db.sqlite
