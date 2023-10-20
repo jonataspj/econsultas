@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-import enum
 from datetime import datetime
 from typing import Optional, List
 
 from pydantic import BaseModel
-from schemas.usuario_schema import UsuarioResponse
+from app.schemas.usuario_schema import UsuarioResponse
 
 
 class ComentarioBase(BaseModel):

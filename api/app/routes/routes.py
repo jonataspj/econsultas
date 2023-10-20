@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
-from routes import consultas, auth, usuarios
+from app.routes import consultas
+from app.routes import usuarios
 
 router = APIRouter()
 router.include_router(consultas.router)

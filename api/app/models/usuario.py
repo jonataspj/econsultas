@@ -2,17 +2,17 @@ import datetime
 from typing import Self
 from uuid import uuid4
 
-from fastapi import Depends
 from sqlalchemy import select
 from sqlalchemy.exc import NoResultFound, MultipleResultsFound
 from sqlalchemy.ext.asyncio import AsyncSession
-from models.base import Base
+from app.models.base import Base
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
 
 class Usuario(Base):
     __tablename__ = "usuario"
+    __table_args__ = {'extend_existing': True}
     id: Mapped[str] = mapped_column(primary_key=True)
     nickname: Mapped[str] = mapped_column(unique=True)
     nome: Mapped[str]
